@@ -27,4 +27,16 @@ Sistema SaaS para gestão de manutenção preventiva.
 
 ## Objetivo
 Projeto educacional com padrões profissionais.
-# maintenance-saas
+# Maintenance SaaS
+
+## Arquitetura do Projeto
+
+A seguir, um diagrama mostrando como o código local interage com os containers Docker (Web e DB) e o navegador:
+
+![Arquitetura do Projeto](app/img/diagram.png)
+
+- **Código Local**: Pasta `app` com FastAPI e `.env`.
+- **Container Web**: FastAPI rodando com Uvicorn.
+- **Container DB**: PostgreSQL.
+- **Navegador**: Acessa a aplicação via `http://127.0.0.1:8000`.
+
