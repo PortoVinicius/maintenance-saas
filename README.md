@@ -14,8 +14,9 @@ maintenance-saas/
 │   ├── infrastructure/  # Banco, segurança, integrações
 │   ├── main.py           # Ponto de entrada da aplicação
 │   └── templates
-│       └── dashboard.html
-│ 
+│       ├── dashboard.html
+│       ├── base.html
+│
 ├── tests/
 │
 ├── .env.example
