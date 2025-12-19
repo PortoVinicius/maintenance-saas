@@ -2,13 +2,20 @@
 maintenance-saas/
 │
 ├── app/
+│   ├── static/
+│   │   └── css/
+│   │       └── style.css
 │   ├── api/              # Camada de entrada (HTTP)
+│   │   └── web/
+│   │       └── dashboard.py│          
 │   ├── core/             # Configurações e regras centrais
 │   ├── domain/           # Entidades de negócio (puras)
 │   ├── services/         # Casos de uso
 │   ├── infrastructure/  # Banco, segurança, integrações
-│   └── main.py           # Ponto de entrada da aplicação
-│
+│   ├── main.py           # Ponto de entrada da aplicação
+│   └── templates
+│       └── dashboard.html
+│ 
 ├── tests/
 │
 ├── .env.example
