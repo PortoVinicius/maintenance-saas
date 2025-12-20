@@ -14,4 +14,14 @@ Dashboard | Maintenance SaaS
     <li>Equipamentos</li>
     <li>Relatórios</li>
 </ul>
+
+{% for order in orders %}
+            <tr>
+                <td>{{ order.id }}</td>
+                <td>{{ order.descricao }}</td>
+                <td>{{ order.status }}</td>
+            </tr>
+            {% endfor %}
+
+{{ message }}
 {% endblock %}
