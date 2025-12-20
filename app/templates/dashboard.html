@@ -15,13 +15,38 @@ Dashboard | Maintenance SaaS
     <li>Relatórios</li>
 </ul>
 
-{% for order in orders %}
-            <tr>
-                <td>{{ order.id }}</td>
-                <td>{{ order.descricao }}</td>
-                <td>{{ order.status }}</td>
-            </tr>
-            {% endfor %}
+        <h2>Ordens de manutenção</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Descrição</th>
+            <th>Status</th>
+            <th>Ação</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for order in orders %}
+        <tr>
+            <td>{{ order.id }}</td>
+            <td>{{ order.descricao }}</td>
+            <td>{{ order.status }}</td>
+            <td>
+                <form method="post" action="/update-status">
+                    <input type="hidden" name="order_id" value="{{ order.id }}">
+                    <select name="new_status">
+                        <option value="pendente" {% if order.status == "pendente" %}selected{% endif %}>pendente</option>
+                        <option value="em andamento" {% if order.status == "em andamento" %}selected{% endif %}>em andamento</option>
+                        <option value="concluída" {% if order.status == "concluída" %}selected{% endif %}>concluída</option>
+                    </select>
+                    <button type="submit">Atualizar</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
 
 {{ message }}
 {% endblock %}
